@@ -33,7 +33,7 @@ const Header = () => {
             id="search"
             className="absolute transition-all duration-300 rounded-lg bg-theme-gray text-theme-blue text-sm font-roboto font-semibold tracking-widest px-0 py-0  group-hover:pl-2 focus:pl-2 group-hover:py-3 focus:py-3  pr-10 opacity-0 focus:opacity-100 group-hover:opacity-100 border-2 border-theme-white -right-0 group-hover:-right-2 focus:-right-2 z-10 w-[0px] group-hover:w-[277px] focus:w-[277px] h-[44px] pr-5 focus:outline-none"
           />
-          <label className="z-20 cursor-pointer" for="search">
+          <label className="z-20 cursor-pointer" htmlFor="search">
             <Image src="/icon/search.svg" alt="search" height={24} width={24} />
           </label>
         </div>
