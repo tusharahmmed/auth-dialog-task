@@ -10,7 +10,7 @@ module.exports = {
   ],
   theme: {
     screens: {
-      tiny: {min: "480", max: "639px"},
+      tiny: {max: "639px"},
       // => @media (min-width: 480px and max-width: 639px) { ... }
       sm: {min: "640px", max: "767px"},
       // => @media (min-width: 640px and max-width: 767px) { ... }

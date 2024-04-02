@@ -1,17 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import {useState} from "react";
 
 const Header = () => {
-  const [searchBox, setSearchBox] = useState(null);
-
   return (
-    <header className="section-padding h-20 bg-theme-blue text-theme-white flex items-center jutify-between">
-      <div className="flex items-center justify-between w-full">
+    <header className=" h-20 bg-theme-blue text-theme-white flex items-center jutify-between">
+      <div className="section-padding w-full flex items-center justify-between ">
         <div>
           <Image
+            className="tiny:w-full"
             src="/image/logo.png"
             alt="logo"
             width={190}
@@ -19,7 +16,7 @@ const Header = () => {
             priority
           />
         </div>
-        <ul className="flex gap-8 ml-5">
+        <ul className="gap-8 ml-5 hidden xl:flex 2xl:flex 3xl:flex">
           <li>HOME</li>
           <li>ABOUT</li>
           <li>COURSES</li>
@@ -27,7 +24,7 @@ const Header = () => {
           <li>EVENTS</li>
           <li>CONTACT</li>
         </ul>
-        <div className="group flex items-center justify-between cursor-pointer relative">
+        <div className="group items-center justify-between cursor-pointer relative hidden xl:flex 2xl:flex 3xl:flex">
           <input
             type="text"
             id="search"
@@ -38,8 +35,10 @@ const Header = () => {
           </label>
         </div>
         <div className="relative flex  border-[1px] rounded-full border-theme-white">
-          <button className="px-5 py-4 text-sm">Login</button>
-          <button className="px-5 py-4 text-sm text-theme-blue	z-10">
+          <button className="px-5 py-4 tiny:px-3 tiny:py-2 text-sm">
+            Login
+          </button>
+          <button className="px-5 py-4 tiny:px-3 tiny:py-2 text-sm text-theme-blue	z-10">
             Register
           </button>
           <span className="absolute bg-[#FFB606] -top-[2px] -right-[2px] -bottom-[2px] left-[45%] z-0 rounded-full"></span>

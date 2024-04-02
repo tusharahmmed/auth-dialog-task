@@ -18,10 +18,6 @@
   button {
     @apply text-base font-roboto text-theme-white leading-normal	font-normal;
   }
-  .section-padding {
-    padding-left: 8rem;
-    padding-right: 8rem;
-  }
 }
 
 * {
@@ -31,21 +27,52 @@
 body {
   scroll-behavior: smooth;
   font-family: var(--font-poppins);
+  height: 100vh;
+}
+.section-padding {
+  padding-left: 8rem;
+  padding-right: 8rem;
 }
 
-/* @include xxl {
-  max-width: 1440px;
-  margin: 0 auto;
+@media screen and (min-width: 1920px) {
+  .section-padding {
+    max-width: 1919px;
+    margin: 0 auto;
+  }
 }
-@include lg {
-  padding-left: 4rem;
-  padding-right: 4rem;
+@media screen and (max-width: 1919px) {
+  .section-padding {
+    max-width: 1535px;
+    margin: 0 auto;
+  }
 }
-@include md {
-  padding-left: 3rem;
-  padding-right: 3rem;
+@media screen and (max-width: 1535px) {
+  .section-padding {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
 }
-@include sm {
-  padding-left: 2rem;
-  padding-right: 2rem;
-} */
+@media screen and (max-width: 1279px) {
+  .section-padding {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .section-padding {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .section-padding {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media screen and (max-width: 639px) {
+  .section-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
