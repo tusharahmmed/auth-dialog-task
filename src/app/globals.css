@@ -28,6 +28,7 @@ body {
   scroll-behavior: smooth;
   font-family: var(--font-poppins);
   height: 100vh;
+  background-color: #f6f6f6;
 }
 .section-padding {
   padding-left: 8rem;
