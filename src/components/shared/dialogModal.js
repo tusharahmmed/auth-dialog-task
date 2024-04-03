@@ -4,11 +4,13 @@ import {useState} from "react";
 import Signin from "../modalContent/signin";
 import Signup from "../modalContent/signup";
 import ResetRequest from "../modalContent/resetRequest";
+import ResetVerify from "../modalContent/resetVerify";
 
 const contents = {
   signin: Signin,
   signup: Signup,
   resetRequest: ResetRequest,
+  resetVerify: ResetVerify,
 };
 
 export default function DialogModal({render, children}) {

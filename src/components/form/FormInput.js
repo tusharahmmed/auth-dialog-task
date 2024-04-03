@@ -97,20 +97,24 @@ const FormInput = ({name, type, value, placeholder, icon, id, validation}) => {
           ) : (
             <div className="relative">
               <Input
-                className="bg-theme-white h-[48px] shadow-[0px 0px 4px 0px rgba(129, 129, 129, 0.25)] rounded-[90px] text-theme-dark font-roboto text-sm leading-[124.386%] pl-[48px] pr-5"
+                className={`bg-theme-white h-[48px] shadow-[0px 0px 4px 0px rgba(129, 129, 129, 0.25)] rounded-[90px] text-theme-dark font-roboto text-sm leading-[124.386%]  pr-5 ${
+                  icon ? "pl-[48px]" : "pl-4"
+                }`}
                 style={errorMessage ? {border: "1px solid #ff00006e"} : {}}
                 type={type}
                 placeholder={placeholder}
                 {...field}
                 value={value ? value : field.value}
               />
-              <Image
-                className="absolute top-4 left-4"
-                src={icon}
-                alt="icon"
-                height={16}
-                width={16}
-              />
+              {icon && (
+                <Image
+                  className="absolute top-4 left-4"
+                  src={icon}
+                  alt="icon"
+                  height={16}
+                  width={16}
+                />
+              )}
               {errorMessage && (
                 <span className="absolute top-3.5 right-4 text-sm text-red-300 font-semibold">
                   {/* {errorMessage} */}
