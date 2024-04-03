@@ -23,10 +23,10 @@ const Signin = () =>
     };
 
     return (
-      <div className="grid grid-cols-[1fr,1.7fr]">
+      <div className="grid lg:grid-cols-[1fr,1.7fr] xl:grid-cols-[1fr,1.7fr] 2xl:grid-cols-[1fr,1.7fr] 3xl:grid-cols-[1fr,1.7fr]">
         <div
           style={{backgroundSize: "102%"}}
-          className="bg-login-modal bg-center bg-no-repeat	rounded-tl-[20px] rounded-bl-[20px] flex
+          className="hidden lg:flex xl:flex 2xl:flex 3xl:flex bg-login-modal bg-center bg-no-repeat	rounded-tl-[20px] rounded-bl-[20px] 
           items-center justify-center">
           <div>
             <h2 className="text-4xl font-poppins font-semibold text-center text-theme-white mb-5">
@@ -38,8 +38,8 @@ const Signin = () =>
           </div>
         </div>
         <div className="flex items-center justify-center">
-          <div className="w-full px-[60px]">
-            <h2 className="text-4xl font-poppins font-semibold text-center text-theme-blue mb-8">
+          <div className="w-full px-[30px] md:px-[60px] lg:px-[60px] xl:px-[60px] 2xl:px-[60px] 3xl:px-[60px]">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-4xl 3xl:text-4xl font-poppins font-semibold text-center text-theme-blue mb-8">
               Log In
             </h2>
             <div>
@@ -47,7 +47,7 @@ const Signin = () =>
                 submitHandler={onSubmit}
                 defaultValues={defaultVal}
                 resolver={yupResolver(userLoginRequestSchema)}>
-                <div className="grid gap-4 mb-[60px]">
+                <div className="grid gap-4 mb-[35px] lg:mb-[45px] xl:mb-[60px] 2x:mb-[60px] 3xl:mb-[60px]">
                   <div>
                     <FormInput
                       name="email"
@@ -85,7 +85,7 @@ const Signin = () =>
                 </div>
 
                 <div className="flex items-center justify-center">
-                  <Button className="block bg-theme-blue text-theme-white font-roboto leading-[124.386%] px-[100px] py-4 h-auto rounded-[90px] hover:bg-theme-blue">
+                  <Button className="block bg-theme-blue text-theme-white font-roboto leading-[124.386%] h-auto rounded-[90px] hover:bg-theme-blue py-4 px-[60px] md:px-[70px] lg:px-[80px] xl:px-[100px] 2xl:px-[100px] 3xl:px-[100px]">
                     LOG IN
                   </Button>
                 </div>
