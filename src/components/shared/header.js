@@ -1,7 +1,5 @@
 import Image from "next/image";
-import {DialogModal} from "./dialogModal";
-import Signup from "../modalContent/signup";
-import Signin from "../modalContent/signin";
+import DialogModal from "./dialogModal";
 
 const Header = () => {
   return (
@@ -36,10 +34,10 @@ const Header = () => {
           </label>
         </div>
         <div className="relative flex  border-[1px] rounded-full border-theme-white ">
-          <DialogModal content={<Signin />}>
+          <DialogModal render={"signin"}>
             <div className="px-5 py-4 tiny:px-3 tiny:py-2 text-sm">Login</div>
           </DialogModal>
-          <DialogModal content={<Signup />}>
+          <DialogModal render={"signup"}>
             <div className="relative px-5 py-4 tiny:px-3 tiny:py-2 text-sm text-theme-blue	z-20 rounded-full ">
               Register
             </div>
