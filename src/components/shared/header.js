@@ -1,6 +1,7 @@
-"use client";
-
 import Image from "next/image";
+import {DialogModal} from "./dialogModal";
+import Signup from "../modalContent/signup";
+import Signin from "../modalContent/signin";
 
 const Header = () => {
   return (
@@ -34,14 +35,16 @@ const Header = () => {
             <Image src="/icon/search.svg" alt="search" height={24} width={24} />
           </label>
         </div>
-        <div className="relative flex  border-[1px] rounded-full border-theme-white">
-          <button className="px-5 py-4 tiny:px-3 tiny:py-2 text-sm">
-            Login
-          </button>
-          <button className="px-5 py-4 tiny:px-3 tiny:py-2 text-sm text-theme-blue	z-10">
-            Register
-          </button>
-          <span className="absolute bg-[#FFB606] -top-[2px] -right-[2px] -bottom-[2px] left-[45%] z-0 rounded-full"></span>
+        <div className="relative flex  border-[1px] rounded-full border-theme-white ">
+          <DialogModal content={<Signin />}>
+            <div className="px-5 py-4 tiny:px-3 tiny:py-2 text-sm">Login</div>
+          </DialogModal>
+          <DialogModal content={<Signup />}>
+            <div className="relative px-5 py-4 tiny:px-3 tiny:py-2 text-sm text-theme-blue	z-20 rounded-full ">
+              Register
+            </div>
+          </DialogModal>
+          <span className="absolute bg-[#FFB606] -top-[2px] -right-[2px] -bottom-[2px] left-[45%] z-[1] rounded-full"></span>
         </div>
       </div>
     </header>
