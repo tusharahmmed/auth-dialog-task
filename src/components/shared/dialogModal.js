@@ -5,12 +5,14 @@ import Signin from "../modalContent/signin";
 import Signup from "../modalContent/signup";
 import ResetRequest from "../modalContent/resetRequest";
 import ResetVerify from "../modalContent/resetVerify";
+import ResetPassword from "../modalContent/resetPassword";
 
 const contents = {
   signin: Signin,
   signup: Signup,
   resetRequest: ResetRequest,
   resetVerify: ResetVerify,
+  resetPassword: ResetPassword,
 };
 
 export default function DialogModal({render, children}) {
