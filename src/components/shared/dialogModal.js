@@ -78,6 +78,7 @@ export function DialogModal({children}) {
                         name="password"
                         placeholder="Password"
                         icon={"/icon/key.svg"}
+                        id={"password"}
                       />
                     </div>
                     <div>
@@ -86,6 +87,7 @@ export function DialogModal({children}) {
                         name="rePassword"
                         placeholder="Confirm Password"
                         icon={"/icon/key.svg"}
+                        id={"rePassword"}
                       />
                     </div>
                     <div className="col-span-2 flex items-center space-x-2">
