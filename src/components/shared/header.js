@@ -1,7 +1,23 @@
+"use client";
+
 import Image from "next/image";
-import DialogModal from "./dialogModal";
+
+import {useDispatch} from "react-redux";
+import {setRender, toggleModal} from "@/rtk/features/authModal/authModalSlice";
 
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const signinModalHandler = () => {
+    dispatch(toggleModal());
+    dispatch(setRender("signin"));
+  };
+
+  const signupModalHandler = () => {
+    dispatch(toggleModal());
+    dispatch(setRender("signup"));
+  };
+
   return (
     <header className=" h-20 bg-theme-blue text-theme-white flex items-center jutify-between">
       <div className="section-padding w-full flex items-center justify-between ">
@@ -34,14 +50,18 @@ const Header = () => {
           </label>
         </div>
         <div className="relative flex  border-[1px] rounded-full border-theme-white ">
-          <DialogModal render={"signin"}>
-            <div className="px-5 py-4 tiny:px-3 tiny:py-2 text-sm">Login</div>
-          </DialogModal>
-          <DialogModal render={"signup"}>
-            <div className="relative px-5 py-4 tiny:px-3 tiny:py-2 text-sm text-theme-blue	z-20 rounded-full ">
-              Register
-            </div>
-          </DialogModal>
+          <div
+            onClick={signinModalHandler}
+            className="cursor-pointer px-5 py-4 tiny:px-3 tiny:py-2 text-sm">
+            Login
+          </div>
+
+          <div
+            onClick={signupModalHandler}
+            className="cursor-pointer relative px-5 py-4 tiny:px-3 tiny:py-2 text-sm text-theme-blue	z-20 rounded-full ">
+            Register
+          </div>
+
           <span className="absolute bg-[#FFB606] -top-[2px] -right-[2px] -bottom-[2px] left-[45%] z-[1] rounded-full"></span>
         </div>
       </div>

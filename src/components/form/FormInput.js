@@ -1,10 +1,10 @@
 "use client";
 
+import {useState} from "react";
 import Image from "next/image";
 import {Input} from "../ui/input";
 import {useFormContext, Controller} from "react-hook-form";
 import {getErrorMessageByPropertyName} from "@/utils/schema-validator";
-import {useState} from "react";
 
 const FormInput = ({name, type, value, placeholder, icon, id, validation}) => {
   const [show, setShow] = useState(false);

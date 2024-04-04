@@ -1,7 +1,7 @@
-import {inter, poppins} from "@/fonts/fonts";
 import "./globals.css";
 import Providers from "@/lib/Providers";
 import Header from "@/components/shared/header";
+import DialogModal from "@/components/shared/dialogModal";
 
 export const metadata = {
   title: "Create Next App",
@@ -14,7 +14,10 @@ export default function RootLayout({children}) {
       <body>
         <Providers>
           <Header />
-          <main>{children}</main>
+          <main>
+            {children}
+            <DialogModal />
+          </main>
           <footer></footer>
         </Providers>
       </body>

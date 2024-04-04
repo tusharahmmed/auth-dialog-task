@@ -10,6 +10,8 @@ import FormInput from "../form/FormInput";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {userSignupRequestSchema} from "@/schemas/signup";
 import DialogModal from "../shared/dialogModal";
+import {useDispatch} from "react-redux";
+import {setRender, toggleModal} from "@/rtk/features/authModal/authModalSlice";
 // import Signin from "./signin";
 // import {DialogClose} from "../ui/dialog";
 
@@ -18,8 +20,11 @@ const Signup = () =>
   {
     // console.log(open);
 
+    const dispatch = useDispatch();
+
     const onSubmit = (data) => {
       console.log(data);
+      dispatch(toggleModal());
     };
     const defaultVal = {
       userName: "",
@@ -122,9 +127,9 @@ const Signup = () =>
                 Have an account? 
                 <span
                   onClick={() => {
-                    // setOpen(false);
+                    dispatch(setRender("signin"));
                   }}
-                  className="text-theme-blue text-base">
+                  className="cursor-pointer text-theme-blue text-base">
                   Sign In
                 </span>
               </p>

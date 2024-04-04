@@ -9,13 +9,19 @@ import Form from "../form/Form";
 import FormInput from "../form/FormInput";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {userLoginRequestSchema} from "@/schemas/login";
+import {useDispatch} from "react-redux";
+import {setRender, toggleModal} from "@/rtk/features/authModal/authModalSlice";
 
 const Signin = () =>
   // {open, setOpen}
   {
+    const dispatch = useDispatch();
+
     // console.log(open);
     const onSubmit = (data) => {
       console.log(data);
+      // close modal
+      dispatch(toggleModal());
     };
     const defaultVal = {
       email: "",
@@ -78,7 +84,11 @@ const Signin = () =>
                         Remember Account
                       </Label>
                     </div>
-                    <p className="font-roboto text-sm text-theme-blue leading-[124.386%] mr-4">
+                    <p
+                      onClick={() => {
+                        dispatch(setRender("resetRequest"));
+                      }}
+                      className="cursor-pointer font-roboto text-sm text-theme-blue leading-[124.386%] mr-4">
                       Forgot Password?
                     </p>
                   </div>
@@ -94,7 +104,13 @@ const Signin = () =>
             <div className="flex items-center justify-center flex-col">
               <p className="my-4 font-roboto text-sm text-theme-dark leading-[124.386%]">
                 Don’t Have an account? {" "}
-                <span className="text-theme-blue text-base">Sign Up</span>
+                <span
+                  onClick={() => {
+                    dispatch(setRender("signup"));
+                  }}
+                  className="cursor-pointer text-theme-blue text-base">
+                  Sign Up
+                </span>
               </p>
               <div className="flex gap-4">
                 <Image

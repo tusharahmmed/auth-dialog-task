@@ -1,11 +1,13 @@
 "use client";
-import {Dialog, DialogContent, DialogTrigger} from "@/components/ui/dialog";
-import {useState} from "react";
+import {useSelector} from "react-redux";
+
 import Signin from "../modalContent/signin";
 import Signup from "../modalContent/signup";
 import ResetRequest from "../modalContent/resetRequest";
 import ResetVerify from "../modalContent/resetVerify";
 import ResetPassword from "../modalContent/resetPassword";
+
+import {Dialog, DialogContent} from "@/components/ui/dialog";
 
 const contents = {
   signin: Signin,
@@ -15,29 +17,15 @@ const contents = {
   resetPassword: ResetPassword,
 };
 
-export default function DialogModal({render, children}) {
-  const [open, setOpen] = useState(false);
+export default function DialogModal() {
+  const authModalState = useSelector((state) => state.authModal);
 
-  // const [ToRender, setToRender] = useState(contents[render]);
-
-  // console.log(ToRender);
-  const ToRender = contents[render];
-
-  // useEffect(() => {
-  //   setToRender(changeContent);
-  // }, [changeContent]);
+  const ToRender = contents[authModalState.render];
 
   return (
-    <Dialog open={open}>
-      <DialogTrigger onClick={() => setOpen(true)} className="w-full">
-        {children}
-      </DialogTrigger>
-      {/* sm:max-w-[425px] */}
-      <DialogContent
-        setOpen={setOpen}
-        className="h-[580px] lg:h-[450px] lg:max-w-[767px] xl:max-w-[1080px]  2xl:max-w-[1080px] 3xl:max-w-[1080px] rounded-[25px] bg-theme-white-light border-4 border-theme-gray shadow-[0px 0px 4px 0px rgba(129, 129, 129, 0.25)] p-0 flex-col">
-        {/* <Content open={open} setOpen={setOpen} /> */}
-        <ToRender open={open} setOpen={setOpen} />
+    <Dialog open={authModalState?.open}>
+      <DialogContent className="h-[580px] lg:h-[450px] lg:max-w-[767px] xl:max-w-[1080px]  2xl:max-w-[1080px] 3xl:max-w-[1080px] rounded-[25px] bg-theme-white-light border-4 border-theme-gray shadow-[0px 0px 4px 0px rgba(129, 129, 129, 0.25)] p-0 flex-col">
+        <ToRender />
       </DialogContent>
     </Dialog>
   );
