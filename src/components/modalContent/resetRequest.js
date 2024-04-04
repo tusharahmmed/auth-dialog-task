@@ -20,10 +20,10 @@ const ResetRequest = () =>
     };
 
     return (
-      <div className="grid grid-cols-[1fr,1.7fr]">
+      <div className="grid lg:grid-cols-[1fr,1.7fr] xl:grid-cols-[1fr,1.7fr] 2xl:grid-cols-[1fr,1.7fr] 3xl:grid-cols-[1fr,1.7fr]">
         <div
           style={{backgroundSize: "102%"}}
-          className="bg-login-modal bg-center bg-no-repeat	rounded-tl-[20px] rounded-bl-[20px] flex
+          className="hidden lg:flex xl:flex 2xl:flex 3xl:flex bg-login-modal bg-center bg-no-repeat	rounded-tl-[20px] rounded-bl-[20px] 
           items-center justify-center">
           <div>
             <h2 className="text-4xl font-poppins font-semibold text-center text-theme-white mb-5">
@@ -35,8 +35,8 @@ const ResetRequest = () =>
           </div>
         </div>
         <div className="flex items-center justify-center">
-          <div className="w-full px-[60px]">
-            <h2 className="text-4xl font-poppins font-semibold text-center text-theme-blue mb-8">
+          <div className="w-full px-[30px] md:px-[60px] lg:px-[60px] xl:px-[60px] 2xl:px-[60px] 3xl:px-[60px]">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-4xl 3xl:text-4xl font-poppins font-semibold text-center text-theme-blue mb-8">
               Reset Password!
             </h2>
             <div>
@@ -45,7 +45,7 @@ const ResetRequest = () =>
                 defaultValues={defaultVal}
                 // resolver={yupResolver(userLoginRequestSchema)}
               >
-                <div className="grid gap-4 mb-[60px]">
+                <div className="grid gap-4 mb-[35px] lg:mb-[45px] xl:mb-[60px] 2x:mb-[60px] 3xl:mb-[60px]">
                   <div>
                     <FormInput
                       name="email"
@@ -53,10 +53,10 @@ const ResetRequest = () =>
                       icon={"/icon/mail.svg"}
                     />
                   </div>
-                  <div className="flex items-center justify-center gap-2.5">
-                    <span className="inline-block w-[160px] h-[0.5px] bg-theme-dark"></span>
+                  <div className="flex items-center justify-center gap-2.5 ">
+                    <span className="inline-block w-[160px] tiny:w-[100px] h-[0.5px] bg-theme-dark"></span>
                     or
-                    <span className="inline-block w-[160px] h-[0.5px] bg-theme-dark"></span>
+                    <span className="inline-block w-[160px] tiny:w-[100px] h-[0.5px] bg-theme-dark"></span>
                   </div>
                   <div>
                     <FormInput
@@ -66,7 +66,7 @@ const ResetRequest = () =>
                     />
                   </div>
 
-                  <div className="w-[90%]">
+                  <div className="w-[90%] tiny:w-full lg:w-full">
                     <p className=" font-roboto text-sm text-theme-dark leading-[124.386%] mr-4 leading-loose">
                       Enter your E-mail Address or Phone Number, we will send a
                       verification code to reset your password.
